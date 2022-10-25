@@ -29,9 +29,9 @@
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Abstract">Abstract</a>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#SeenDemo">Seen Transcripts</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#UnseenDemo">unseen Transcripts</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#UnseenDemo">Unseen Transcripts</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#LongDemo">Long Transcripts</a></li>
                     </ul>
                 </div>
@@ -91,119 +91,66 @@
                 <div class="row">
                     <div class="col-lg-14 ml-auto">
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          
+                          <!-- 1개 demo sample 시작-->
                           <thead>
-                            <tr>                              
-                              <th style="width: 16.6%"><center>GT</center></th>
-                              <th style="width: 16.6%"><center>GT+Vocoder</center></th>
-                              <th style="width: 16.6%"><center>VITS</center></th>
-                              <th style="width: 16.6%"><center>PortaSpeech</center></th>
-                              <th style="width: 16.6%"><center>BVAE-TTS</center></th>
-                              <th style="width: 16.6%"><center>CyFi-TTS(Ours)</center></th>
+                            <tr>
+                              <td>
+                                <em> script: ㅇㅇㅇㅇㅇ </em>
+                              </td>
                             </tr>
                           </thead>
                           
                           <tbody>
-                            <!-- p269_009_to_p270_015
-                            -->               
-
-                            <!-- 1개 demo sample 시작-->
                             <tr>   
-                              <!-- Source Speaker --> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
-                              
-                              <!-- Models -->
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                              <td>GT<audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                              <td>GT+Vocoder<audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                              <td>VITS<audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                              <td>PortaSpeech<audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                              <td>BVAE-TTS<audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>
+                              <td>CyFi-TTS(Ours)<audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
                             </tr>
-                            <!-- 1개 demo sample 끝-->   
-                            
-                            
-                            <!-- 1개 demo sample 시작-->
-                            <tr>   
-                              <!-- Source Speaker --> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td> 
-                              
-                              <!-- Models -->
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td>  
-                            </tr>
-                            <!-- 1개 demo sample 끝-->
-                     
-                                                       
-
-                            <!-- 1개 demo sample 시작-->
-                            <tr>   
-                              <!-- Source Speaker --> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td> 
-                              
-                              <!-- Models -->
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>  
-                            </tr>
-                            <!-- 1개 demo sample 끝-->                         
-                            
-                            <!-- 1개 demo sample 시작-->
-                            <tr>   
-                              <!-- Source Speaker --> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td> 
-                              
-                              <!-- Models -->
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>  
-                            </tr>
-                            <!-- 1개 demo sample 끝-->
-
-
-
-                            <!-- 1개 demo sample 시작-->
-                            <tr>   
-                              <!-- Source Speaker --> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td> 
-                              
-                              <!-- Models -->
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>  
-                            </tr>
-                            <!-- 1개 demo sample 끝-->
-
-                            
-                            <!-- 1개 demo sample 시작-->
-                            <tr>   
-                              <!-- Source Speaker --> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td> 
-                              
-                              <!-- Models -->
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td> 
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>  
-                              <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>  
-                            </tr>
-                            <!-- 1개 demo sample 끝-->
-
-
                           </tbody>
+                          <!-- 1개 demo sample 끝-->   
+                          
                         </table>
                     </div>
 
                 </div>
                 <!-- 1개 데모 세트 끝-->
                 
+
+                <!-- 1개 데모 세트 시작 -->
+                <div class="row">
+                  <div class="col-lg-14 ml-auto">
+                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        
+                        <!-- 1개 demo sample 시작-->
+                        <thead>
+                          <tr>
+                            <td>
+                              <em> script: ㅇㅇㅇㅇㅇ </em>
+                            </td>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+                          <tr>   
+                            <td>GT<audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>GT+Vocoder<audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>VITS<audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>PortaSpeech<audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                            <td>BVAE-TTS<audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>
+                            <td>CyFi-TTS(Ours)<audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                          </tr>
+                        </tbody>
+                        <!-- 1개 demo sample 끝-->   
+                        
+                      </table>
+                  </div>
+
+              </div>
+              <!-- 1개 데모 세트 끝-->
 
 
 
@@ -235,97 +182,59 @@
                 <div class="row">
                   <div class="col-lg-15 ml-auto">
                       <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        
+                        <!-- 1개 demo sample 시작-->
                         <thead>
-                          <tr>                              
-                            <th style="width: 16.6%"><center>GT</center></th>
-                            <th style="width: 16.6%"><center>GT+Vocoder</center></th>
-                            <th style="width: 16.6%"><center>VITS</center></th>
-                            <th style="width: 16.6%"><center>PortaSpeech</center></th>
-                            <th style="width: 16.6%"><center>BVAE-TTS</center></th>
-                            <th style="width: 16.6%"><center>CyFi-TTS(Ours)</center></th>
+                          <tr>
+                            <td>
+                              <em> script: ㅇㅇㅇㅇㅇ </em>
+                            </td>
                           </tr>
                         </thead>
-                        
+
                         <tbody>
-                                                    
-
-                          <!-- 1개 demo sample 시작-->
                           <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_source/p239_010_to_p245_014.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_target/p239_010_to_p245_014.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AutoVC/p239_010_to_p245_014.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AgainVC/p239_010_to_p245_014.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/VQVC/p239_010_to_p245_014.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/StyleVC/p239_010_to_p245_014.wav" type="audio/wav" /></audio></td>  
+                            <td>GT<audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>GT+Vocoder<audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>VITS<audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>PortaSpeech<audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                            <td>BVAE-TTS<audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>
+                            <td>CyFi-TTS(Ours)<audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
                           </tr>
-                          <!-- 1개 demo sample 끝-->   
-                          
-
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_source/p234_013_to_p246_017.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_target/p234_013_to_p246_017.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AutoVC/p234_013_to_p246_017.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AgainVC/p234_013_to_p246_017.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/VQVC/p234_013_to_p246_017.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/StyleVC/p234_013_to_p246_017.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->   
-
-                          
-
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_source/p230_002_to_p245_006.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_target/p230_002_to_p245_006.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AutoVC/p230_002_to_p245_006.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AgainVC/p230_002_to_p245_006.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/VQVC/p230_002_to_p245_006.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/StyleVC/p230_002_to_p245_006.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->  
-                        
-
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_source/p233_018_to_p246_017.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_target/p233_018_to_p246_017.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AutoVC/p233_018_to_p246_017.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AgainVC/p233_018_to_p246_017.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/VQVC/p233_018_to_p246_017.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/StyleVC/p233_018_to_p246_017.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝--> 
-                                                    
-
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_source/p236_005_to_p227_005.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/GT_target/p236_005_to_p227_005.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AutoVC/p236_005_to_p227_005.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/AgainVC/p236_005_to_p227_005.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/VQVC/p236_005_to_p227_005.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/unseen/StyleVC/p236_005_to_p227_005.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->   
-                                                           
-
                         </tbody>
+                        <!-- 1개 demo sample 끝-->   
+                      </table>
+                  </div>
+
+                </div>
+                <!-- 1개 데모 세트 끝-->
+
+
+                <!-- 1개 데모 세트 시작 -->
+                <div class="row">
+                  <div class="col-lg-15 ml-auto">
+                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        
+                        <!-- 1개 demo sample 시작-->
+                        <thead>
+                          <tr>
+                            <td>
+                              <em> script: ㅇㅇㅇㅇㅇ </em>
+                            </td>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>   
+                            <td>GT<audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>GT+Vocoder<audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>VITS<audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                            <td>PortaSpeech<audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                            <td>BVAE-TTS<audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>
+                            <td>CyFi-TTS(Ours)<audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                          </tr>
+                        </tbody>
+                        <!-- 1개 demo sample 끝-->   
                       </table>
                   </div>
 
@@ -363,120 +272,35 @@
 
               <!-- 1개 데모 세트 시작 -->
               <div class="row">
-                  <div class="col-lg-14 ml-auto">
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                        <thead>
-                          <tr>                              
-                            <th style="width: 16.6%"><center>GT</center></th>
-                            <th style="width: 16.6%"><center>GT+Vocoder</center></th>
-                            <th style="width: 16.6%"><center>VITS</center></th>
-                            <th style="width: 16.6%"><center>PortaSpeech</center></th>
-                            <th style="width: 16.6%"><center>BVAE-TTS</center></th>
-                            <th style="width: 16.6%"><center>CyFi-TTS(Ours)</center></th>
-                          </tr>
-                        </thead>
-                        
-                        <tbody>
-                          <!-- p269_009_to_p270_015
-                          -->               
+                <div class="col-lg-14 ml-auto">
+                    <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                      
+                      <!-- 1개 demo sample 시작-->
+                      <thead>
+                        <tr>
+                          <td>
+                            <em> script: ㅇㅇㅇㅇㅇ </em>
+                          </td>
+                        </tr>
+                      </thead>
+                      
+                      <tbody>
+                        <tr>   
+                          <td>GT<audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                          <td>GT+Vocoder<audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                          <td>VITS<audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
+                          <td>PortaSpeech<audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                          <td>BVAE-TTS<audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>
+                          <td>CyFi-TTS(Ours)<audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
+                        </tr>
+                      </tbody>
+                      <!-- 1개 demo sample 끝-->   
+                      
+                    </table>
+                </div>
 
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->   
-                          
-                          
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->
-                   
-                                                     
-
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->                         
-                          
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->
-
-
-
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->
-
-                          
-                          <!-- 1개 demo sample 시작-->
-                          <tr>   
-                            <!-- Source Speaker --> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_source/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td> 
-                            
-                            <!-- Models -->
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td> 
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>  
-                            <td><audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio></td>  
-                          </tr>
-                          <!-- 1개 demo sample 끝-->
-
-
-                        </tbody>
-                      </table>
-                  </div>
-
-              </div>
-              <!-- 1개 데모 세트 끝-->
+            </div>
+            <!-- 1개 데모 세트 끝-->
               
 
 
