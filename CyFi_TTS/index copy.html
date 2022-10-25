@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>StyleVC Demo</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+        <!-- my CSS -->
+        <!-- 전체 가로 폭을 조절하고 싶다면 style.css에서 1540을 검색해서, 이숫자를 원하는 width로 바꿔준다! (원래는 1140이었음)-->
+        <!-- 왼쪽 마진 변경 margin-left:  -1.5(초기값) ->
+        <!-- 220은 table 길이임! demo라는 이름으로 받아와서 쓴다! -->
+        <style>        
+        .demo {
+          width: 250px;
+        }
+        </style>
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">StyleVC DEMO</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#SeenDemo">SEEN DEMO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#UnseenDemo">UNSEEN DEMO</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                  <h1 class="masthead-heading mb-0"><center>StyleVC: Non-parallel Voice Conversion with Adversarial Style Generalization</center></h1><br>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">In-Sun Hwang, Sang-Hoon Lee, Seong-Whan Lee</p>
+            </div>
+        </header>
+
+
+
+        <!-- Abstraction -->        
+        <section class="page-section portfolio" id="Abstract">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2> <br> <br>
+                    <h5>Voice conversion uses two samples to synthesize speech: the source sample is used for content, the target sample is used to style representation. Therefore, it has been progressed to design information flow to disentangle content and style in a speech. However, separated representation is damaged due to passing through sparse subspace. Besides, VC models suffer from the training-inference mismatch problem that only uses one sample in training. Accordingly, the model extracts inappropriate content and style representation and generates low-quality speech during inference. To address this problem, we propose a StyleVC, which utilizes adversarial style generalization. First, we propose style generalization, which captures global style representation and restricts the model from copying information. Second, we further use adversarial training to make the model generate more realistic speech. Third, we use a pitch predictor to estimate pitch information according to content and style representation. Finally, we demonstrate our proposed model can generate high-quality speech. The experimental results also show that the proposed StyleVC significantly outperforms to extract the desired features and improve audio quality during inference.
+                    </h5><br>                    
+                    <h5>The code will be released at <a href="https://github.com/intory89/StyleVC", target="_blank">https://github.com/intory89/StyleVC</a> </h5>
+                </div>                
+            </div>
+        </section>
+
+        		    
+        <section class="page-section bg-primary text-white mb-0" id="SeenDemo">
+            <div class="container">
+
+            
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">Seen Demo(Non-parallel data)</h2> <br> <br>
+                    <h3 font-size:3rem ine-height:2.5rem> Female to male conversion</h3>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+
+                <!-- 1개 데모 세트 시작 -->
+                <div class="row">
+                    <div class="col-lg-14 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 16.6%">Source speech</th>
+                              <th style="width: 16.6%">Target speech</th>
+                              <th style="width: 66.8%">Generated speech</th>
+                            </tr>
+                          </thead>
+                          
+                          <tbody>
+                            
+                            <!--  
+                                목소리가 잘안바뀐 녀석들
+                                p260_017_to_p292_016
+                                p268_001_to_p310_001
+                                p271_007_to_p258_004
+
+                            -->
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p224(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p244_010_to_p269_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p269(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p244_010_to_p269_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p244_010_to_p269_006.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p244_010_to_p269_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p244_010_to_p269_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p244_010_to_p269_006.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+                            
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p250(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p250_019_to_p263_013.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p263(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p263_013.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p263_013.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p263_013.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p263_013.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p263_013.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p250(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p250_019_to_p334_011.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p334(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p250_019_to_p334_011.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p250_019_to_p334_011.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+                            
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p256(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p256_006_to_p259_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p359(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p256_006_to_p259_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p256_006_to_p259_017.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p256_006_to_p259_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p256_006_to_p259_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p256_006_to_p259_017.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p257(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p257_009_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p364(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p257_009_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p257_009_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p257_009_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p257_009_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p257_009_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p258(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p258_006_to_p266_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p266(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p258_006_to_p266_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p258_006_to_p266_017.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p258_006_to_p266_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p258_006_to_p266_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p258_006_to_p266_017.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p261(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p261_016_to_p302_005.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p302(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p261_016_to_p302_005.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p261_016_to_p302_005.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p261_016_to_p302_005.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p261_016_to_p302_005.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p261_016_to_p302_005.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+                            
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p266(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p266_008_to_p270_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p270(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p266_008_to_p270_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p266_008_to_p270_012.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p266(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p269_009_to_p263_016.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p270(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p269_009_to_p263_016.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p269_009_to_p263_016.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p269_009_to_p263_016.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p269_009_to_p263_016.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p269_009_to_p263_016.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p269(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p269_009_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p270(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p269_009_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p269_009_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p269_009_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p269_009_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p269_009_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p273(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p273_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p278(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p273_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p273_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p273_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p273_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p273_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p273(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p276_018_to_p292_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p278(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p276_018_to_p292_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p276_018_to_p292_017.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p276_018_to_p292_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p276_018_to_p292_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p276_018_to_p292_017.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p277(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p277_019_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p270(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p277_019_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p277_019_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p277_019_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p277_019_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p277_019_to_p270_015.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p282(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p282_008_to_p323_008.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p323(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p282_008_to_p323_008.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p282_008_to_p323_008.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p282_008_to_p323_008.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p282_008_to_p323_008.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p282_008_to_p323_008.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p283(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p283_013_to_p253_016.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p253(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p283_013_to_p253_016.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p283_013_to_p253_016.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p283_013_to_p253_016.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p283_013_to_p253_016.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p283_013_to_p253_016.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p288(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p288_017_to_p273_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p273(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p288_017_to_p273_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p288_017_to_p273_012.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+                            
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p288(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p288_017_to_p298_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p273(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p288_017_to_p298_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p288_017_to_p298_012.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p288_017_to_p298_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p288_017_to_p298_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p288_017_to_p298_012.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+                            
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p298(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p298_013_to_p256_016.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p256(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p298_013_to_p256_016.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p298_013_to_p256_016.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p298_013_to_p256_016.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p298_013_to_p256_016.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p298_013_to_p256_016.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+                            
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p298(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p298_013_to_p360_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p260(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p298_013_to_p360_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p298_013_to_p360_006.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p298_013_to_p360_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p298_013_to_p360_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p298_013_to_p360_006.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p298(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p298_017_to_p313_002.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p313(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p298_017_to_p313_002.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p298_017_to_p313_002.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p298_017_to_p313_002.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p298_017_to_p313_002.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p298_017_to_p313_002.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p305(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p305_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p278(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p305_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p305_013_to_p278_017.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p308(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p308_002_to_p258_011.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p358(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p308_002_to_p258_011.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p308_002_to_p258_011.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p311(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p311_005_to_p281_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p281(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p311_005_to_p281_017.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p311_005_to_p281_017.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p311_005_to_p281_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p311_005_to_p281_017.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p311_005_to_p281_017.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p311(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p312_017_to_p330_018.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p330(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p312_017_to_p330_018.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p312_017_to_p330_018.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p312_017_to_p330_018.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p312_017_to_p330_018.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p312_017_to_p330_018.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p317(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p317_018_to_p334_019.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p334(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p317_018_to_p334_019.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p317_018_to_p334_019.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p317_018_to_p334_019.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p317_018_to_p334_019.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p317_018_to_p334_019.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p318(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p318_005_to_p334_018.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p334(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p318_005_to_p334_018.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p318_005_to_p334_018.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p334(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p334_013_to_p316_013.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p316(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p334_013_to_p316_013.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p334_013_to_p316_013.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p334_013_to_p316_013.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p334_013_to_p316_013.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p334_013_to_p316_013.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p336(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p336_001_to_p244_001.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p224(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p336_001_to_p244_001.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p336_001_to_p244_001.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p336_001_to_p244_001.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p336_001_to_p244_001.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p336_001_to_p244_001.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p339(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p339_005_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p364(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p339_005_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p339_005_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p339_005_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p339_005_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p339_005_to_p364_012.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p345(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p345_009_to_p270_002.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p270(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p345_009_to_p270_002.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p345_009_to_p270_002.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p345_009_to_p270_002.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p345_009_to_p270_002.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p345_009_to_p270_002.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p345(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p360_002_to_p271_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p270(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p360_002_to_p271_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p360_002_to_p271_006.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p360_002_to_p271_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p360_002_to_p271_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p360_002_to_p271_006.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p360(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p360_002_to_p285_011.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p285(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p360_002_to_p285_011.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p360_002_to_p285_011.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p360_002_to_p285_011.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p360_002_to_p285_011.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p360_002_to_p285_011.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p362(Female)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p362_003_to_p361_003.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p361(Female)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p362_003_to_p361_003.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p362_003_to_p361_003.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p362_003_to_p361_003.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p362_003_to_p361_003.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p362_003_to_p361_003.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+                            <!-- 1개 demo sample 시작-->
+                            <tr>   
+                              <!-- Source Speaker --> 
+                              <td><p style="color:blue"><b>p364(Male)</b></p>
+                                <audio controls="controls" class="demo"><source src="wav/seen/GT_source/p364_017_to_p334_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Target Speaker -->
+                              <td><p style="color:blue"><b>p334(Male)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/GT_target/p364_017_to_p334_006.wav" type="audio/wav" /></audio>
+                              </td> 
+                              
+                              <!-- Models -->
+                              <td><p>AutoVC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AutoVC/p364_017_to_p334_006.wav" type="audio/wav" /></audio>
+                              </td> 
+
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/AgainVC/p364_017_to_p334_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p>VQVC+</p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/VQVC/p364_017_to_p334_006.wav" type="audio/wav" /></audio>
+                              </td>  
+
+                              <td><p style="color:blue"><b>StyleVC(Ours)</b></p>
+                                <audio controls="controls" class="demo"> <source src="wav/seen/StyleVC/p364_017_to_p334_006.wav" type="audio/wav" /></audio>
+                              </td>  
+                            </tr>
+                            <!-- 1개 demo sample 끝-->
+
+
+
+
+
+
+
+
+
+
+
+                          </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- 1개 데모 세트 끝-->
+
+
+
+
+            <!--
+              Set 종료
+            -->
+            </div>
+        </section>
+        
+
+
+
+
+        <section class="page-section" id="UnseenDemo">
+            <div class="container">
+
+
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-black">Unseen Demo(Non-parallel data)</h2> <br>
+                    <!-- <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3> -->
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+                  
+
+                <!-- 1개 데모 시작 -->
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-15 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 30%">Mel-spectrogram</th>
+                              <th style="width: 23.3%">Source speech</th>
+                              <th style="width: 23.3%">Target speech</th>
+                              <th style="width: 23.3%">Converted speech</th>
+                            </tr>
+                          </thead>
+                          
+                          
+                          <tbody>
+                            <tr>          
+                              <!-- Melspectrogram-->
+                              <td rowspan="5" style="vertical-align: top;">
+                                <img src="wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG" id="sample11" width=600pt> 
+                                <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                              </td>                        
+                              
+                              <!-- Source Speaker --> 
+                              <td rowspan="5" style="vertical-align: top;"><p><b>mw01 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_a.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/GT_source/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              
+                              <!-- Target Speaker -->
+                              <td rowspan="5" style="vertical-align: top;"><p><b>mw02 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_g.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/GT_target/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              
+                              <!-- Models -->
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_b.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AgainVC/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>  
+                            </tr>
+  
+                            <tr>
+                              <td><p>AutoVC(freq16)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_c.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoVC_freq16/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                            <tr>
+                              <td><p>AutoVC(freq32)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_d.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoVC_freq32/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                            <tr>
+                              <td><p>AutoPST</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_e.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoPST/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                            <tr>
+                              <td><p><b>RCVC(Ours)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_f.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/RCVC_dim6/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                          </tbody>                          
+                        </table>
+                    </div>
+                </div>
+                <!-- 1개 데모 끝-->
+                
+
+
+            <!--
+              Set 종료!
+            -->
+            </div>
+        </section>
+
+
+        
+        <!--
+
+          p234_p234_002_to_p271_p271_002  -- 발표자료
+          p299_p299_010_to_p274_p274_010
+          p247_p247_017_to_p300_p300_017
+
+        -->
+
+
+
+
+        <!-- Copyright Section-->
+        <section class="copyright py-4 text-center text-white">
+<!--            <div class="container"><small class="pre-wrap">Copyright © Korea University</small></div>-->
+            <div class="container"><big class="pre-wrap">If the picture or audio does not work properly, please use the latest chrome version.</big></div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/change.js"></script>
+
+    </body>
+</html>
