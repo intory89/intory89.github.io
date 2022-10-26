@@ -5,7 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>StyleVC Demo</title>
+
+
+        <title>CyFi-TTS Demo</title>
+
+
         <!-- Font Awesome icons (free version)-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -14,7 +18,7 @@
         <link rel="stylesheet" href="css/heading.css">
         <link rel="stylesheet" href="css/body.css">
         <!-- my CSS -->
-        <!-- 전체 가로 폭을 조절하고 싶다면 style.css에서 1540을 검색해서, 이숫자를 원하는 width로 바꿔준다! (원래는 1140이었음)-->
+        <!-- 전체 가로 폭을 조절하고 싶다면 style.css에서 1440을 검색해서, 이숫자를 원하는 width로 바꿔준다! (원래는 1140이었음)-->
         <!-- 왼쪽 마진 변경 margin-left:  -1.5(초기값) ->
         <!-- 220은 table 길이임! demo라는 이름으로 받아와서 쓴다! -->
         <style>        
@@ -59,13 +63,8 @@
                     </h><br>                    
                     
                     <!--
-                    <h5>The code will be released at <a href="https://github.com/intory89/StyleVC", target="_blank">https://github.com/intory89/StyleVC</a> </h5>
+                    <h5>The code will be released at <a href="https://github.com/intory89/CyFi_TTS", target="_blank">https://github.com/intory89/CyFi_TTS</a> </h5>
                     -->
-
-                    <!-- <br>
-                    <h5>If you're interested in our work, RCVC, check out the demo results here! <br>
-                      <a href="https://prml-lab-speech-team.github.io/demo/insun-hwang/RCVC", target="_blank">https://prml-lab-speech-team.github.io/demo/insun-hwang/RCVC</a>
-                    </h5> -->
 
                 </div>                
             </div>
@@ -74,13 +73,12 @@
         		    
         <section class="page-section bg-primary text-white mb-0" id="SeenDemo">
             <div class="container">
-
             
                 <!-- About Section Heading-->
                 <div class="text-center">
                     <h2 class="page-section-heading d-inline-block text-white">Seen Transcripts Demo</h2>
-                    <!-- <h3 font-size:3rem ine-height:2.5rem> Female to Male conversion</h3> -->
                 </div>
+
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom"></div>
@@ -88,8 +86,10 @@
 
 
                 <!-- 1개 데모 세트 시작 -->
-                <div class="row">
-                    <div class="col-lg-14 ml-auto">
+                
+                <div class="row">            
+                    <div class="col-lg-14 ml-auto">    
+                      
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           
                           <!-- 1개 demo sample 시작-->
@@ -104,7 +104,7 @@
                           <tbody>
                             <tr>   
                               <td>GT<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT/sample_0004.wav" type="audio/wav" /></audio></td> 
-                              <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0004.wav" type="audio/wav" /></audio></td> 
+                              <!-- <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0004.wav" type="audio/wav" /></audio></td>  -->
                               <td>VITS<br><audio controls="controls" class="demo"> <source src="wavs/seen/VITS/sample_0004.wav" type="audio/wav" /></audio></td> 
                               <td>PortaSpeech<br><audio controls="controls" class="demo"> <source src="wavs/seen/PortaSpeech/sample_0004.wav" type="audio/wav" /></audio></td>  
                               <td>BVAE-TTS<br><audio controls="controls" class="demo"> <source src="wavs/seen/BVAE_TTS/sample_0004.wav" type="audio/wav" /></audio></td>
@@ -113,12 +113,10 @@
                           </tbody>
                           <!-- 1개 demo sample 끝-->   
                           
-                        </table>
+                        </table>  
                     </div>
-
                 </div>
                 <!-- 1개 데모 세트 끝-->
-              
 
               
                 <!-- 1개 데모 세트 시작 -->
@@ -138,7 +136,7 @@
                         <tbody>
                           <tr>   
                             <td>GT<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT/sample_0019.wav" type="audio/wav" /></audio></td> 
-                            <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0019.wav" type="audio/wav" /></audio></td> 
+                            <!-- <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0019.wav" type="audio/wav" /></audio></td>  -->
                             <td>VITS<br><audio controls="controls" class="demo"> <source src="wavs/seen/VITS/sample_0019.wav" type="audio/wav" /></audio></td> 
                             <td>PortaSpeech<br><audio controls="controls" class="demo"> <source src="wavs/seen/PortaSpeech/sample_0019.wav" type="audio/wav" /></audio></td>  
                             <td>BVAE-TTS<br><audio controls="controls" class="demo"> <source src="wavs/seen/BVAE_TTS/sample_0019.wav" type="audio/wav" /></audio></td>
@@ -172,7 +170,7 @@
                       <tbody>
                         <tr>   
                           <td>GT<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT/sample_0069.wav" type="audio/wav" /></audio></td> 
-                          <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0069.wav" type="audio/wav" /></audio></td> 
+                          <!-- <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0069.wav" type="audio/wav" /></audio></td>  -->
                           <td>VITS<br><audio controls="controls" class="demo"> <source src="wavs/seen/VITS/sample_0069.wav" type="audio/wav" /></audio></td> 
                           <td>PortaSpeech<br><audio controls="controls" class="demo"> <source src="wavs/seen/PortaSpeech/sample_0069.wav" type="audio/wav" /></audio></td>  
                           <td>BVAE-TTS<br><audio controls="controls" class="demo"> <source src="wavs/seen/BVAE_TTS/sample_0069.wav" type="audio/wav" /></audio></td>
@@ -208,7 +206,7 @@
                       <tbody>
                         <tr>   
                           <td>GT<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT/sample_0146.wav" type="audio/wav" /></audio></td> 
-                          <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0146.wav" type="audio/wav" /></audio></td> 
+                          <!-- <td>GT+Vocoder<br><audio controls="controls" class="demo"> <source src="wavs/seen/GT_Vocoder/sample_0146.wav" type="audio/wav" /></audio></td>  -->
                           <td>VITS<br><audio controls="controls" class="demo"> <source src="wavs/seen/VITS/sample_0146.wav" type="audio/wav" /></audio></td> 
                           <td>PortaSpeech<br><audio controls="controls" class="demo"> <source src="wavs/seen/PortaSpeech/sample_0146.wav" type="audio/wav" /></audio></td>  
                           <td>BVAE-TTS<br><audio controls="controls" class="demo"> <source src="wavs/seen/BVAE_TTS/sample_0146.wav" type="audio/wav" /></audio></td>
